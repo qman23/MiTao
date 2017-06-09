@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:util="http://http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                        http://www.springframework.org/schema/util
+                        http://www.springframework.org/schema/util/spring-util-2.0.xsd"> 	
+    
+    <context:component-scan base-package="cn.com.order.security" />
+    
+    <bean id="sslFilter" class="org.apache.shiro.web.filter.authz.SslFilter">  
+    	<property name="port" value="8443"/>  
+	</bean> 
+	
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
+        <property name="securityManager" ref="securityManager" />  
+        <property name="loginUrl" value="/login" />  
+        <property name="successUrl" value="/welcome" />  
+        <property name="unauthorizedUrl" value="/unauthorized" />  
+        <property name="filters">
+        <map>
+            <entry key="ssl" value-ref="sslFilter"/>  
+        </map>
+        </property>
+        <property name="filterChainDefinitions">  
+            <value>  
+                /welcome = authc <!-- authc 表示需要认证才能访问的页面 -->  
+                /index = authc
+                /unauthorized = authc
+                /orderapproval/* = authc, roles[manager]
+                /user/* = authc, roles[sysadm]
+                <!-- 1、authc 表示需要认证的链接 -->
+				<!-- 2、perms[/url] 表示该链接需要拥有对应的资源/权限才能访问-->
+				<!-- 3、roles[admin] 表示需要对应的角色才能访问-->
+				<!-- 4、perms[admin:url] 表示需要对应角色的资源才能访问-->
+            </value>  
+        </property>  
+    </bean>  
+   
+    <bean id="userRealm" class="cn.com.order.security.UserRealm">
+    </bean>
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
+        <property name="realm" ref="userRealm"></property>  
+    </bean>  
+</beans>
