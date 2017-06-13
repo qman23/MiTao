@@ -41,7 +41,7 @@
         </property>  
     </bean>  
    
-    <bean id="userRealm" class="cn.com.order.security.UserRealm">
+    <bean id="userRealm" class="com.mitao.security.UserRealm">
     </bean>
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
         <property name="realm" ref="userRealm"></property>  

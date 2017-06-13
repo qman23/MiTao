@@ -14,11 +14,11 @@
     					http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">  
 
     <!-- 自动扫描 -->  
-    <context:component-scan base-package="cn.com.order.po,cn.com.order.dto,cn.com.order.dao,cn.com.order.service,cn.com.order.helper" />
+    <context:component-scan base-package="com.mitao.po,com.mitao.dto,com.mitao.dao,com.mitao.service,com.mitao.helper" />
     <!-- 引入配置文件 -->  
     <bean id="propertyConfigurer"  
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
-        <property name="location" value="classpath:jdbc.properties" />  
+        <property name="location" value="classpath:db.properties" />  
     </bean>  
   
  	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -60,12 +60,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
         <property name="dataSource" ref="dataSource" />  
         <!-- 自动扫描mapping.xml文件 -->  
-        <property name="mapperLocations" value="classpath:mybatis/*.xml"></property>  
+        <property name="mapperLocations" value="classpath:myBatis/*.xml"></property>  
     </bean>  
   
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="cn.com.order.dao" />  
+        <property name="basePackage" value="com.mitao.dao" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
     </bean>  
   

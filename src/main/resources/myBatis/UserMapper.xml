@@ -3,15 +3,19 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.lin.dao.UserDao">  
 <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
-    <resultMap id="BaseResultMap" type="com.lin.domain.User">  
+    <resultMap id="BaseResultMap" type="com.mitao.po.User">  
         <id column="UserID" property="UserID" jdbcType="CHAR" />  
-        <result column="USER_NAME" property="userName" jdbcType="CHAR" />  
-        <result column="USER_PASSWORD" property="userPassword" jdbcType="CHAR" />  
-        <result column="USER_EMAIL" property="userEmail" jdbcType="CHAR" />  
+        <result column="Name" property="Name" jdbcType="CHAR" />  
+        <result column="Password" property="Password" jdbcType="CHAR" />  
+        <result column="Phone" property="Phone" jdbcType="CHAR" />  
+        <result column="Role" property="Role" jdbcType="Byte" />  
+        <result column="RegisterTime" property="RegisterTime" jdbcType="TIMESTAMP" />  
+        <result column="LoginTime" property="LoginTime" jdbcType="TIMESTAMP" />  
+        <result column="LoginIP" property="LoginIP" jdbcType="CHAR" />  
     </resultMap>  
     <!-- 查询单条记录 -->  
-    <select id="selectUserById" parameterType="int" resultMap="BaseResultMap">  
-        SELECT * FROM t_user WHERE USER_ID = #{userId}  
+    <select id="selectUserById" parameterType="String" resultMap="BaseResultMap">  
+        SELECT * FROM t_user WHERE USER_ID = #{UserID}  
     </select>  
 </mapper>  
 

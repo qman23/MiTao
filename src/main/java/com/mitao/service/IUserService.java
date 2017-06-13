@@ -4,5 +4,5 @@ import com.mitao.po.User;
 
 public interface IUserService {
 
-	User selectUserById(Integer userID);
+	User selectUserById(String userID);
 }

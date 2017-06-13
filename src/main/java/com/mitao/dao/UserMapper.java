@@ -4,5 +4,5 @@ import com.mitao.po.User;
 
 public interface UserMapper {
 
-	public User selectUserById(Integer userID);
+	public User selectUserById(String userID);
 }

@@ -12,7 +12,7 @@ public class UserServiceImpl implements IUserService{
 	private UserMapper userMapper;
 
 	@Override
-	public User selectUserById(Integer userID) {
+	public User selectUserById(String userID) {
 		return userMapper.selectUserById(userID);
 	}
 	
