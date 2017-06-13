@@ -32,7 +32,7 @@ under the License.
  |  2. Global Level. This settings.xml file provides configuration for all Maven
  |                 users on a machine (assuming they're all using the same Maven
  |                 installation). It's normally provided in
- |                 ${maven.conf}/settings.xml.
+ |                 ${maven.home}/conf/settings.xml.
  |
  |                 NOTE: This location can be overridden with the CLI option:
  |
@@ -46,6 +46,11 @@ under the License.
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+		  
+
+<localRepository>C:\Users\IBM_ADMIN\.m2\repository</localRepository>
+
+
   <!-- localRepository
    | The path to the local repository maven will use to store artifacts.
    |
@@ -148,12 +153,20 @@ under the License.
      | Specifies a repository mirror site to use instead of a given repository. The repository that
      | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
      | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |-->
+     |
     <mirror>
-      <id>nexus-osc</id>
-	  <mirrorOf>*</mirrorOf>
-	  <name>Nexus osc</name>
-	  <url>http://maven.oschina.net/content/groups/public/</url>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+     -->
+	 
+    <mirror>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <mirrorOf>central</mirrorOf>        
     </mirror>
   </mirrors>
 
@@ -179,40 +192,6 @@ under the License.
    |
    |-->
   <profiles>
-  <profile>
-	<id>jdk-1.4</id>
-
-	<activation>
-		<jdk>1.4</jdk>
-	</activation>
-
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus</id>
-			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-</profile>
     <!-- profile
      | Specifies a set of introductions to the build process, to be activated using one or more of the
      | mechanisms described above. For inheritance purposes, and to activate profiles via <activatedProfiles/>
