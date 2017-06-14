@@ -8,7 +8,7 @@ public class User {
 	private String Name; 
 	private String Password;
 	private String Phone;
-	private Integer Role; 
+	private Byte Role; 
 	private Timestamp RegisterTime; 
 	private Timestamp LoginTime;
 	private String LoginIP;
@@ -36,10 +36,10 @@ public class User {
 	public void setPhone(String phone) {
 		Phone = phone;
 	}
-	public Integer getRole() {
+	public Byte getRole() {
 		return Role;
 	}
-	public void setRole(Integer role) {
+	public void setRole(Byte role) {
 		Role = role;
 	}
 	public Timestamp getRegisterTime() {
