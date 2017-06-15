@@ -14,7 +14,7 @@
         <result column="LoginIP" property="LoginIP" jdbcType="CHAR" />  
     </resultMap>  
     <!-- 查询单条记录 -->  
-    <select id="selectUserById" parameterType="String" resultMap="BaseResultMap">  
+    <select id="selectUserByUserId" parameterType="String" resultMap="BaseResultMap">  
         SELECT * FROM t_user WHERE USER_ID = #{UserID}  
     </select>  
 </mapper>  

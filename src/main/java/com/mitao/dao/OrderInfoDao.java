@@ -1,5 +1,10 @@
 package com.mitao.dao;
 
-public interface OrderInfoDao {
+import java.util.Set;
 
+import com.mitao.po.OrderInfo;
+
+public interface OrderInfoDao {
+	
+	public Set<OrderInfo> selectOrderInfobyOrderID(String OrderID);
 }

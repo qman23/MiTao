@@ -2,7 +2,9 @@ package com.mitao.po;
 
 public class Contact {
 
+	private String ContactID;
 	private String OrderID;
+	private String UserID;
 	private String ContactAddress;
 	private String Phone;
 	private String Name;
@@ -16,6 +18,18 @@ public class Contact {
 	}
 	public void setOrderID(String orderID) {
 		OrderID = orderID;
+	}
+	public String getContactID() {
+		return ContactID;
+	}
+	public void setContactID(String contactID) {
+		ContactID = contactID;
+	}
+	public String getUserID() {
+		return UserID;
+	}
+	public void setUserID(String userID) {
+		UserID = userID;
 	}
 	public String getContactAddress() {
 		return ContactAddress;

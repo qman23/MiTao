@@ -12,8 +12,8 @@ public class UserServiceImpl implements IUserService{
 	private UserDao userMapper;
 
 	@Override
-	public User selectUserById(String userID) {
-		return userMapper.selectUserById(userID);
+	public User selectUserByUserId(String userID) {
+		return userMapper.selectUserByUserId(userID);
 	}
 	
 }

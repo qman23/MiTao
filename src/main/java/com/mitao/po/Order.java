@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class Order {
 
 	private String OrderID;
+	private String UserID;
 	private Timestamp CreateTimeStamp;
 	private String OrderStatus;
 	private String Distribution;
@@ -18,6 +19,12 @@ public class Order {
 	}
 	public void setOrderID(String orderID) {
 		OrderID = orderID;
+	}
+	public String getUserID() {
+		return UserID;
+	}
+	public void setUserID(String userID) {
+		UserID = userID;
 	}
 	public Timestamp getCreateTimeStamp() {
 		return CreateTimeStamp;
