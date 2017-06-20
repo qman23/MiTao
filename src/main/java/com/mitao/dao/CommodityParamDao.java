@@ -6,5 +6,5 @@ import com.mitao.po.CommodityParam;
 
 public interface CommodityParamDao {
 
-	public Set<CommodityParam> selectCommodityParamByCmdID(String CmdID);
+	public Set<CommodityParam> selectCommodityParamsByCmdID(String CmdID);
 }

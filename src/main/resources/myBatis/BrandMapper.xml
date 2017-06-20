@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>    
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
-<mapper namespace="com.mitao.dao.UserDao">  
+<mapper namespace="com.mitao.dao.BrandDao">  
 <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
-    <resultMap id="BaseResultMap" type="com.mitao.po.User">  
+    <resultMap id="BaseResultMap" type="com.mitao.po.Brand">  
         <id column="UserID" property="UserID" jdbcType="VARCHAR" />  
         <result column="Name" property="Name" jdbcType="VARCHAR" />  
         <result column="Password" property="Password" jdbcType="VARCHAR" />  

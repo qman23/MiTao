@@ -6,5 +6,5 @@ import com.mitao.po.OrderInfo;
 
 public interface OrderInfoDao {
 	
-	public Set<OrderInfo> selectOrderInfobyOrderID(String OrderID);
+	public Set<OrderInfo> selectOrderInfosbyOrderID(String OrderID);
 }

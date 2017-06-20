@@ -6,5 +6,5 @@ import com.mitao.po.Brand;
 
 public interface CommodityTypeDao {
 
-	public Set<Brand> selectBrandByType(String Type);
+	public Set<Brand> selectBrandsByType(String Type);
 }

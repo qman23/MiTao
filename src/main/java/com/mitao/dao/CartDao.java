@@ -6,5 +6,5 @@ import com.mitao.po.Cart;
 
 public interface CartDao {
 
-	public Set<Cart> selectCartByUserID(String UserID);
+	public Set<Cart> selectCartsByUserID(String UserID);
 }

@@ -6,5 +6,5 @@ import com.mitao.po.CommodityURL;
 
 public interface CommodityURLDao {
 
-	public Set<CommodityURL> selectCommodityURLByCmdID(String CmdID);
+	public Set<CommodityURL> selectCommodityURLsByCmdID(String CmdID);
 }

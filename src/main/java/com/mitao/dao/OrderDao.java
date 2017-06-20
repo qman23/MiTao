@@ -8,7 +8,7 @@ public interface OrderDao {
 
 	public Order selectOrderByOrderID(String OrderID);
 	
-	public Set<Order> selectOrderByOrderStatus(String OrderStatus);
+	public Set<Order> selectOrdersByOrderStatus(String OrderStatus);
 	
-	public Set<Order> selectOrderByUserID(String UserID);
+	public Set<Order> selectOrdersByUserID(String UserID);
 }
