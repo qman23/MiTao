@@ -4,15 +4,14 @@
 <mapper namespace="com.mitao.dao.CartDao">  
 <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
     <resultMap id="BaseResultMap" type="com.mitao.po.CartDao">  
-        <id column="RecordID" property="RecordID" jdbcType="VARCHAR" />
-        <result column="Quantity" property="Quantity" jdbcType="VARCHAR" />
-        <collection property="CmdID" ofType="com.mitao.po.CommodityDao">
-        	<id column="CmdID" property="RecordID" jdbcType="VARCHAR" /> 
-        	
-        </collection>   
+        <id column="recordID" property="record_id" jdbcType="VARCHAR" />
+        <result column="quantity" property="quantity" jdbcType="VARCHAR" />
+        <association property="user" column="user_id" javaType="com.mitao.po.User">
+        	<id property="userID" column="user_id"/>
+        </association> 
     </resultMap>  
     <!-- 查询单条记录 -->  
-    <select id="selectCartsByUserID" parameterType="String" resultMap="BaseResultMap">  
+    <select id="selectCartsByUserID" parameterType="String" resultType="java.util.List">  
         SELECT * FROM Cart WHERE USER_ID = #{UserID}  
     </select>  
 </mapper>

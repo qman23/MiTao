@@ -2,9 +2,9 @@ package com.mitao.dao;
 
 import java.util.Set;
 
-import com.mitao.po.CommodityURL;
+import com.mitao.po.CmdURL;
 
 public interface CommodityURLDao {
 
-	public Set<CommodityURL> selectCommodityURLsByCmdID(String CmdID);
+	public Set<CmdURL> selectCommodityURLsByCmdID(String CmdID);
 }

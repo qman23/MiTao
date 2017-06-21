@@ -1,10 +1,10 @@
 package com.mitao.dao;
 
-import java.util.Set;
+import java.util.List;
 
 import com.mitao.po.Cart;
 
 public interface CartDao {
 
-	public Set<Cart> selectCartsByUserID(String UserID);
+	public List<Cart> selectCartsByUserID(String UserID);
 }

@@ -1,6 +1,6 @@
 package com.mitao.po;
 
-public class CommodityURL {
+public class CmdURL {
 
 	private String CmdID;
 	private Byte PhotoID;

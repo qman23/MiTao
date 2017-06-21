@@ -1,8 +1,8 @@
 package com.mitao.dao;
 
-import com.mitao.po.CommodityInfo;
+import com.mitao.po.CmdInfo;
 
 public interface CommodityInfoDao {
 
-	public CommodityInfo selectCommodityInfoByCmdID(String CmdID);
+	public CmdInfo selectCommodityInfoByCmdID(String CmdID);
 }

@@ -2,32 +2,33 @@ package com.mitao.po;
 
 public class Cart {
 
-	private String RecordID;
-	private String CmdID;
-	private String UserID;
-	private String Quantity;
+	private String recordID;
+	private String cmdID;
+	private User user;
+	private String quantity;
 	public String getRecordID() {
-		return RecordID;
+		return recordID;
 	}
 	public void setRecordID(String recordID) {
-		RecordID = recordID;
+		this.recordID = recordID;
 	}
 	public String getCmdID() {
-		return CmdID;
+		return cmdID;
 	}
 	public void setCmdID(String cmdID) {
-		CmdID = cmdID;
+		this.cmdID = cmdID;
 	}
-	public String getUserID() {
-		return UserID;
+	public User getUser() {
+		return user;
 	}
-	public void setUserID(String userID) {
-		UserID = userID;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 	public void setQuantity(String quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
+
 }

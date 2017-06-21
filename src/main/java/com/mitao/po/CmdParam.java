@@ -1,6 +1,6 @@
 package com.mitao.po;
 
-public class CommodityParam {
+public class CmdParam {
 
 	private String CmdID;
 	private String CmdKey;

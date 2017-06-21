@@ -1,6 +1,6 @@
 package com.mitao.po;
 
-public class CommodityInfo {
+public class CmdInfo {
 
 	private String CmdID;
 	private String Info;

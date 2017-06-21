@@ -2,9 +2,9 @@ package com.mitao.dao;
 
 import java.util.Set;
 
-import com.mitao.po.CommodityParam;
+import com.mitao.po.CmdParam;
 
 public interface CommodityParamDao {
 
-	public Set<CommodityParam> selectCommodityParamsByCmdID(String CmdID);
+	public Set<CmdParam> selectCommodityParamsByCmdID(String CmdID);
 }

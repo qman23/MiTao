@@ -1,6 +1,6 @@
 package com.mitao.po;
 
-public class CommodityType {
+public class CmdType {
 
 	private String TypeID;
 	private String Type;
