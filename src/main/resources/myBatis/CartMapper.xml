@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.mitao.dao.CartDao">  
+<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
+    <resultMap id="BaseResultMap" type="com.mitao.po.CartDao">  
+        <id column="RecordID" property="RecordID" jdbcType="VARCHAR" />
+        <result column="Quantity" property="Quantity" jdbcType="VARCHAR" />
+        <collection property="CmdID" ofType="com.mitao.po.CommodityDao">
+        	<id column="CmdID" property="RecordID" jdbcType="VARCHAR" /> 
+        	
+        </collection>   
+    </resultMap>  
+    <!-- 查询单条记录 -->  
+    <select id="selectCartsByUserID" parameterType="String" resultMap="BaseResultMap">  
+        SELECT * FROM Cart WHERE USER_ID = #{UserID}  
+    </select>  
+</mapper>
